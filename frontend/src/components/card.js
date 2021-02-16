@@ -21,7 +21,7 @@ const Card = ({ article }) => {
           </p>
           <div>
             <hr className="uk-divider-small" />
-            <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
+            {/* <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
               <div>
                 {article.node.author.picture && (
                   <Img
@@ -35,7 +35,7 @@ const Card = ({ article }) => {
                   {article.node.author.name}
                 </p>
               </div>
-            </div>
+                </div> */}
           </div>
         </div>
       </div>

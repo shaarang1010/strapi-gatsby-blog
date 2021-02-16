@@ -1,14 +1,15 @@
+
 a {
   text-decoration: none !important;
 }
 
 h1 {
-  font-family: Staatliches !important;
-  font-size: 120px !important;
+  font-family: Sacramento !important;
+  font-size: 100px !important;
 }
 
 #category {
-  font-family: Staatliches !important;
+  font-family: Bungee !important;
   font-weight: 500 !important;
 }
 
@@ -16,7 +17,12 @@ h1 {
   letter-spacing: 0.4px !important;
   font-size: 22px !important;
   font-size: 1.375rem !important;
+  font-family: Nunito !important;
   line-height: 1.13636 !important;
+}
+
+#content{
+  font-family: Bungee !important;
 }
 
 #banner {
@@ -32,10 +38,19 @@ h1 {
 
 .uk-navbar-container {
   background: #fff !important;
-  font-family: Staatliches !important;
+  font-family: Bungee !important;
 }
 
 img:hover {
   opacity: 1 !important;
   transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1) !important;
 }
+
+
+@media only screen and (min-width: 600px){
+  h1{
+    font-family: Sacramento !important;
+    font-size: 80px !important;
+  }
+}
+

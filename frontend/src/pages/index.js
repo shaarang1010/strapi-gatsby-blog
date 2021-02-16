@@ -8,7 +8,7 @@ const IndexPage = () => {
   const data = useStaticQuery(query);
 
   return (
-    <Layout seo={data.strapiHomepage.seo}>
+    <Layout seo={data.strapiHomepage.seo} footer={data.strapiHomepage.footer}>
       <div className="uk-section">
         <div className="uk-container uk-container-large">
           <h1>{data.strapiHomepage.hero.title}</h1>
@@ -32,6 +32,9 @@ const query = graphql`
           publicURL
         }
       }
+      footer{
+        content
+      }
     }
     allStrapiArticle(filter: { status: { eq: "published" } }) {
       edges {
@@ -46,16 +49,6 @@ const query = graphql`
             childImageSharp {
               fixed(width: 800, height: 500) {
                 src
-              }
-            }
-          }
-          author {
-            name
-            picture {
-              childImageSharp {
-                fixed(width: 30, height: 30) {
-                  src
-                }
               }
             }
           }

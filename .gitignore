@@ -72,3 +72,4 @@ yarn-error.log
 # Custom
 
 .vscode
+frontend/package-lock.json

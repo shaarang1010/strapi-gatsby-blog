@@ -13,6 +13,18 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `architectsdaughter`,
+          `anton`,
+          `bungee`,
+          `sacramento`
+        ],
+        display: 'swap'
+      }
+    },
+    {
       resolve: "gatsby-source-strapi",
       options: {
         apiURL: process.env.API_URL || "http://localhost:1337",
@@ -32,6 +44,7 @@ module.exports = {
         background_color: "#663399",
         theme_color: "#663399",
         display: "minimal-ui",
+        icon: `src/images/blog.png`
       },
     },
     "gatsby-plugin-offline",

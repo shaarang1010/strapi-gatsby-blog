@@ -6,7 +6,7 @@ import Layout from "../../components/layout";
 import Markdown from "react-markdown";
 
 export const query = graphql`
-  query ArticleQuery($slug: String!) {
+query ArticleQuery($slug: String!) {
     strapiArticle(slug: { eq: $slug }, status: { eq: "published" }) {
       strapiId
       title
@@ -16,13 +16,12 @@ export const query = graphql`
       image {
         publicURL
         childImageSharp {
-          fixed {
+          fixed{
             src
           }
         }
       }
       author {
-        name
         picture {
           childImageSharp {
             fixed(width: 30, height: 30) {
@@ -30,6 +29,11 @@ export const query = graphql`
             }
           }
         }
+      }
+    }
+    strapiHomepage{
+      footer{
+        content
       }
     }
   }
@@ -43,9 +47,11 @@ const Article = ({ data }) => {
     shareImage: article.image,
     article: true,
   };
+  const footer = data.strapiHomepage.footer;
 
+  
   return (
-    <Layout seo={seo}>
+    <Layout seo={seo} footer={footer}>
       <div>
         <div
           id="banner"
@@ -59,11 +65,7 @@ const Article = ({ data }) => {
 
         <div className="uk-section">
           <div className="uk-container uk-container-small">
-            <Markdown source={article.content} escapeHtml={false} />
-
-            <hr className="uk-divider-small" />
-
-            <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
+          <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
               <div>
                 {article.author.picture && (
                   <Img
@@ -73,14 +75,15 @@ const Article = ({ data }) => {
                 )}
               </div>
               <div className="uk-width-expand">
-                <p className="uk-margin-remove-bottom">
-                  By {article.author.name}
-                </p>
                 <p className="uk-text-meta uk-margin-remove-top">
                   <Moment format="MMM Do YYYY">{article.published_at}</Moment>
                 </p>
               </div>
             </div>
+            <hr className="uk-divider-small" />
+            <Markdown source={article.content} escapeHtml={false} id="content"/>
+
+            
           </div>
         </div>
       </div>
