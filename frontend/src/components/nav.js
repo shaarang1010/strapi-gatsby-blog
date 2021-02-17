@@ -25,7 +25,7 @@ const Nav = () => (
             <div className="uk-navbar-left">
               <ul className="uk-navbar-nav">
                 <li>
-                  <Link to="/">{data.strapiGlobal.siteName}</Link>
+                  <Link to="/" id="homelink">{data.strapiGlobal.siteName}</Link>
                 </li>
               </ul>
             </div>

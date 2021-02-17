@@ -1,4 +1,5 @@
 import React from "react";
+import Moment from "react-moment";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 
@@ -13,30 +14,30 @@ const Card = ({ article }) => {
           />
         </div>
         <div className="uk-card-body">
-          <p id="category" className="uk-text-uppercase">
+          {/*<p id="category" className="uk-text-uppercase">
             {article.node.category.name}
-          </p>
+          </p> */}
           <p id="title" className="uk-text-large">
             {article.node.title}
           </p>
-          <div>
+        <div>
             <hr className="uk-divider-small" />
-            {/* <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
-              <div>
+            <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
+              {/*  <div>
                 {article.node.author.picture && (
                   <Img
                     fixed={article.node.author.picture.childImageSharp.fixed}
                     imgStyle={{ position: "static", borderRadius: "50%" }}
                   />
                 )}
-              </div>
+                </div>    */}
               <div className="uk-width-expand">
                 <p className="uk-margin-remove-bottom">
-                  {article.node.author.name}
+                  <Moment format="MMM Do YYYY">{article.node.publishedAt}</Moment>
                 </p>
               </div>
-                </div> */}
-          </div>
+                </div>
+                </div>
         </div>
       </div>
     </Link>

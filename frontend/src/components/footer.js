@@ -3,7 +3,7 @@ import Markdown from "react-markdown";
 
 const Footer = ({data}) => {
     return(
-        <div>
+        <div id="footer" >
             <nav className="uk-navbar-container" data-uk-navbar>
                 <div className="uk-navbar-center">
                     <div className="uk-navbar-center-left"></div>

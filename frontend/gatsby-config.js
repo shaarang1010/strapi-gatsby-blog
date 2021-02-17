@@ -16,10 +16,12 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `architectsdaughter`,
+          `architects daughter`,
+          `permanent marker`,
           `anton`,
           `bungee`,
-          `sacramento`
+          `sacramento`,
+          `ubuntu`
         ],
         display: 'swap'
       }

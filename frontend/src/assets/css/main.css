@@ -4,8 +4,13 @@ a {
 }
 
 h1 {
-  font-family: Sacramento !important;
+  font-family: Permanent Marker !important;
   font-size: 100px !important;
+}
+
+h2{
+  font-size: 1.5rem !important;
+  font-family: Architects Daughter !important;
 }
 
 #category {
@@ -15,14 +20,19 @@ h1 {
 
 #title {
   letter-spacing: 0.4px !important;
-  font-size: 22px !important;
-  font-size: 1.375rem !important;
-  font-family: Nunito !important;
+  font-size: 16px !important;
+  font-size: 1.25rem !important;
+  font-family: Bungee !important;
   line-height: 1.13636 !important;
 }
 
 #content{
   font-family: Bungee !important;
+}
+
+#article-title{
+  font-size: 60px !important;
+  font-family: Architects Daughter !important;
 }
 
 #banner {
@@ -36,9 +46,18 @@ h1 {
   line-height: 1.75 !important;
 }
 
+#homelink{
+  font-size: 20px;
+  font-family: Architects Daughter !important;
+}
+
 .uk-navbar-container {
   background: #fff !important;
   font-family: Bungee !important;
+}
+
+#footer{
+  margin-top: 30vh;
 }
 
 img:hover {
@@ -47,10 +66,63 @@ img:hover {
 }
 
 
-@media only screen and (min-width: 600px){
+@media only screen  and (min-device-width: 310px) 
+and (max-device-width: 560px) 
+and (-webkit-min-device-pixel-ratio: 3) { 
   h1{
-    font-family: Sacramento !important;
-    font-size: 80px !important;
+    font-family: Permanent Marker !important;
+    font-size: 40px !important;
+  }
+
+  #banner{
+    margin: none !important;
+    height: 200px !important;
+    width: 300px !important;
+  }
+
+  iframe{
+    width: 300px !important;
+  }
+  #article-title{
+    font-size: 30px !important;
+    font-family: Architects Daughter !important;
+  }
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    h1{
+      font-family: Permanent Marker !important;
+      font-size: 40px !important;
+    } 
+    #banner{
+      margin: none !important;
+      height: 200px !important;
+      width: 350px !important;
+    }
+    #article-title{
+      font-size: 30px !important;
+      font-family: Architects Daughter !important;
+    }
+}
+
+@media only screen and (min-device-width: 411px) 
+and (max-device-width: 736px) 
+and (-webkit-min-device-pixel-ratio: 3) {
+  h1{
+    font-family: Permanent Marker !important;
+    font-size: 30px !important;
+  } 
+  #banner{
+    margin: none !important;
+    height: 200px !important;
+    width: 320px !important;
+  }
+  #article-title{
+    font-size: 30px !important;
+    font-family: Architects Daughter !important;
   }
 }
 

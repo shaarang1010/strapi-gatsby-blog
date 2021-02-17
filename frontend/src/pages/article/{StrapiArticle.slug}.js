@@ -60,7 +60,7 @@ const Article = ({ data }) => {
           data-srcset={article.image.publicURL}
           data-uk-img
         >
-          <h1>{article.title}</h1>
+          <h1 id="article-title">{article.title}</h1>
         </div>
 
         <div className="uk-section">
@@ -76,7 +76,7 @@ const Article = ({ data }) => {
               </div>
               <div className="uk-width-expand">
                 <p className="uk-text-meta uk-margin-remove-top">
-                  <Moment format="MMM Do YYYY">{article.published_at}</Moment>
+                  <Moment format="MMM Do YYYY">{article.publishedAt}</Moment>
                 </p>
               </div>
             </div>

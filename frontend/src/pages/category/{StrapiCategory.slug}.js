@@ -12,12 +12,13 @@ export const query = graphql`
         node {
           slug
           title
+          publishedAt
           category {
             name
           }
           image {
             childImageSharp {
-              fixed(width: 660) {
+              fixed(width: 660, height: 400) {
                 src
               }
             }
@@ -38,6 +39,11 @@ export const query = graphql`
     category: strapiCategory(slug: { eq: $slug }) {
       name
     }
+    strapiHomepage{
+      footer{
+        content
+      }
+    }
   }
 `;
 
@@ -49,12 +55,18 @@ const Category = ({ data }) => {
     metaDescription: `All ${category} articles`,
   };
 
+  const footer = data.strapiHomepage.footer;
+
   return (
-    <Layout seo={seo}>
+    <Layout seo={seo} footer={footer}>
       <div className="uk-section">
         <div className="uk-container uk-container-large">
           <h1>{category}</h1>
-          <ArticlesComponent articles={articles} />
+          { articles.length <= 0 ? 
+          <div style={{marginTop: '40px'}}> 
+            <h2> No articles published in this section </h2>
+          </div>:
+            <ArticlesComponent articles={articles} /> }
         </div>
       </div>
     </Layout>
